@@ -1,0 +1,1 @@
+start artifacts\FXServer.exe +set onesync on +set onesync_population +set onesync_enableInfinity 1 false +exec server.cfg

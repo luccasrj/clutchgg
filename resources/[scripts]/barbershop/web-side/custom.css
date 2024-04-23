@@ -1,0 +1,425 @@
+@font-face {
+    font-family: "TT Lakes";
+    src: url("./fonts/ttlakes.eot"); /* IE9/
+    src: url("./fonts/ttlakes.eot?#iefix") format("embedded-opentype"),
+      / IE6-IE8 / url("./fonts/ttlakes.woff2") format("woff2"),
+      / chrome、firefox / url("./fonts/ttlakes.woff") format("woff"),
+      / chrome、firefox / url("./fonts/ttlakes.ttf") format("truetype"),
+      / chrome、firefox、opera、Safari, Android, iOS 4.2+/
+        url("./fonts/ttlakes.svg") format("svg"); / iOS 4.1- /
+  }
+  @font-face {
+    font-family: "TT Lakes Bold";
+    src: url("./fonts/TTLakes-Bold.ttf"); / IE9/
+    src: url("./fonts/TTLakes-Bold.ttf") format("truetype"); / iOS 4.1- */
+}
+
+body,
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'TT Lakes', Arial, Helvetica, sans-serif;
+    outline: 0;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+}
+
+#cursorPointer {
+    position: absolute;
+    z-index: 999999;
+    display: none;
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    display: none;
+}
+
+::-webkit-scrollbar-track {
+    background: #20232e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #11141d;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #11141d;
+}
+
+#barbershop-limiter {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    /* margin-left: 80px; */
+    flex-direction: column;
+    justify-content: center;
+}
+
+#barbershop-limiter .barbershop-container {
+    height: 60%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 15px;
+    border-radius: 5px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    position: relative;
+}
+
+#barbershop-limiter .barbershop-container header {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, 0.80);
+    font-size: 13px;
+    font-weight: 700;
+}
+#barbershop-limiter .barbershop-container header h1 {
+    font-weight: 500;
+}
+#barbershop-limiter .barbershop-container header::after {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.80);
+}
+
+#barbershop-limiter .menu-area {
+    width: max-content;
+    background-color: rgba(17, 17, 17, 0.80);
+    border-radius: 5px;
+    padding: 5px;
+    top: 45px;
+    right: -45px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+#barbershop-limiter .menu-area div {
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.01);
+    background: rgba(255, 255, 255, 0.01);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#barbershop-limiter .barbershop-container .content-area {
+    height: 100%;
+    overflow: auto;
+}
+
+#barbershop-limiter .barbershop-container .content-area .option-separator {
+    display: none;
+}
+
+#barbershop-limiter .barbershop-container .content-area .option-separator.active {
+    display: block;
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+    -webkit-animation-duration: .75s;
+    animation-duration: .75s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+#barbershop-limiter .barbershop-container .content-area .option-separator .option-group {
+    margin-top: 10px;
+}
+#barbershop-limiter .barbershop-container .content-area .option-separator .option-group .option-input {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1.327px solid rgba(255, 255, 255, 0.01);
+    background-color: rgba(17, 17, 17, 0.80);;
+}
+
+#barbershop-limiter .barbershop-container .content-area .option-separator .option-group .option-input:last-child {
+    margin-bottom: 0px;
+}
+
+#barbershop-limiter .barbershop-container .content-area .option-separator .option-group .option-input label {
+    text-transform: uppercase;
+    font-weight: 600;
+    width: 100%;
+    color: rgba(255, 255, 255, 0.35);;
+    padding: 11px 0px 8px 11px;
+    font-size: 12px;
+    display: flex;
+    gap: 2px;
+}
+
+#barbershop-limiter .barbershop-container .content-area .option-separator .option-group .option-input label p:last-child {
+    color: rgba(255, 255, 255, 0.1);
+}
+
+#barbershop-limiter .barbershop-container .content-area .option-separator .option-group .option-input .input-field {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    border-radius: 0px 0px 5px 5px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.01);
+    padding: 5px;
+}
+
+#barbershop-limiter .barbershop-container .content-area .option-separator .option-group .option-input .input-field i {
+    color: #8CE249;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 5px 10px;
+    /* border-radius: 5px; */
+    transition: all .2s;
+}
+
+@media (max-width: 1280px) {
+    #barbershop-limiter .barbershop-container {
+        width: 330px;
+    }
+
+    #barbershop-limiter .barbershop-container .submit-area .submit-button {
+        padding: 15px 0;
+        /* font-size: 15px; */
+    }
+}
+
+@media (min-width: 1281px) and (max-width: 1366px) {
+    #barbershop-limiter .barbershop-container {
+        width: 330px;
+    }
+
+    #barbershop-limiter .barbershop-container .submit-area .submit-button {
+        padding: 15px 0;
+        /* font-size: 15px; */
+    }
+}
+
+@media (min-width: 1367px) and (max-width: 1600px) {
+    #barbershop-limiter .barbershop-container {
+        width: 360px;
+    }
+
+    #barbershop-limiter .barbershop-container .submit-area .submit-button {
+        padding: 20px 0;
+        /* font-size: 17px; */
+    }
+}
+
+@media (min-width: 1601px) and (max-width: 1920px) {
+    #barbershop-limiter .barbershop-container {
+        width: 360px;
+    }
+
+    #barbershop-limiter .barbershop-container .submit-area .submit-button {
+        padding: 20px 0;
+        /* font-size: 17px; */
+    }
+}
+
+@media (min-width: 1921px) and (max-width: 2160px) {
+    #barbershop-limiter .barbershop-container {
+        width: 360px;
+    }
+
+    #barbershop-limiter .barbershop-container .submit-area .submit-button {
+        padding: 20px 0;
+        /* font-size: 17px; */
+    }
+}
+
+input {
+    background-color: transparent;
+    width: 100%;
+}
+
+input[type=range].styled-slider {
+    height: 15px;
+    -webkit-appearance: none;
+}
+
+input[type=range].styled-slider.slider-progress {
+    /* --range: calc(var(--max) - var(--min)); */
+    /* --ratio: calc((var(--value) - var(--min)) / var(--range)); */
+    /* --sx: calc(0.5 * 8px + var(--ratio) * (100% - 8px)); */
+}
+
+input[type=range].styled-slider:focus {
+    outline: none;
+}
+
+/*webkit*/
+input[type=range].styled-slider::-webkit-slider-thumb {
+    width: 8px;
+    height: 8px;
+    background: #8CE249;
+    border: none;
+    border-radius: 4px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    /* margin-top: calc(6px * 0.5 - 10px * 0.5); */
+    -webkit-appearance: none;
+    box-shadow: 0px 0px 5px #8CE249;
+    position: relative;
+}
+
+input[type=range].styled-slider::-webkit-slider-runnable-track {
+    background: #A8AFC6;
+    border: none;
+    border-radius: 5px;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+input[type=range].styled-slider.slider-progress::-webkit-slider-runnable-track {
+    background: rgba(255, 255, 255, 0.02);;
+}
+
+/*mozilla*/
+input[type=range].styled-slider::-moz-range-thumb {
+    width: 8px;
+    height: 10px;
+    background: #C7CCDA;
+    border: none;
+    box-shadow: none;
+}
+
+input[type=range].styled-slider::-moz-range-track {
+    height: 6px;
+    background: #A8AFC6;
+    border: none;
+    box-shadow: none;
+}
+
+input[type=range].styled-slider.slider-progress::-moz-range-track {
+    background: linear-gradient(#6B7184, #6B7184) 0/var(--sx) 100% no-repeat, #A8AFC6;
+}
+
+/*ms*/
+input[type=range].styled-slider::-ms-fill-upper {
+    background: transparent;
+    border-color: transparent;
+}
+
+input[type=range].styled-slider::-ms-fill-lower {
+    background: transparent;
+    border-color: transparent;
+}
+
+input[type=range].styled-slider::-ms-thumb {
+    width: 8px;
+    height: 10px;
+    background: #C7CCDA;
+    border: none;
+    box-shadow: none;
+    margin-top: 0;
+    box-sizing: border-box;
+}
+
+input[type=range].styled-slider::-ms-track {
+    height: 6px;
+    background: #A8AFC6;
+    border: none;
+    box-shadow: none;
+    box-sizing: border-box;
+}
+
+input[type=range].styled-slider.slider-progress::-ms-fill-lower {
+    height: 6px;
+    margin: -undefined 0 -undefined -undefined;
+    background: #6B7184;
+    border: none;
+    border-right-width: 0;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.btns {
+    display: grid;
+    margin-top: 10px;
+    background-color: rgba(17, 17, 17, 0.80);
+    border-radius: 5px;
+    padding: 5px;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+}
+
+.btns button {
+    border-radius: 5px;
+    border: 0;
+    color: rgba(255, 255, 255, 0.15);
+    text-align: center;
+    transition: all .2s;
+    text-transform: uppercase;
+    background: rgba(255, 255, 255, 0.01);
+    font-size: 9px;
+}
+
+.btns button:first-child {
+    color: #8CE249;
+    border: 0.5px solid #8CE249;
+    background: linear-gradient(169deg, rgba(145, 224, 83, 0.80) 0%, rgba(39, 63, 20, 0.80) 100%);
+}
+
+.roll {
+    color: rgba(255, 255, 255, 0.80);
+    margin-top: 15px;
+    font-size: 11px;
+    text-align: center;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.roll i {
+    margin-right: 5px;
+}
+.fas.fa-angle-right,.fas.fa-angle-left {
+    font-weight: normal !important;
+}
