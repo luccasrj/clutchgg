@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>loadscreen</title>
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="  crossorigin="anonymous"></script>
+        <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+    </head>
+
+    <body>
+
+        <img class="bg" src="bg.png">
+<!-- 		<img class="logo" src="logo.png">
+ -->
+        <div id="fare"></div>
+
+        <div class="infos">
+			<div class="text"><img src="down.png"/>CARREGANDO <b>ARQUIVOS<span class="dots">...</span></b></div>
+			<div class="percent">??</div>
+		</div>
+        <div class="loadbar"><div class="thingy"></div></div>
+
+        <!-- <div class="video-background" style="background: #000;">
+            <div class="video-foreground" id="YouTubeBackgroundVideoPlayer"></div>
+        </div> -->
+    
+        <script type="text/javascript">
+            let count = 0;
+            let thisCount = 0;
+    
+            setInterval(() => {
+                let dots = $('.dots').html()
+                var newDots = ''
+                if (dots == '&nbsp;') { newDots = '.' }
+                if (dots == '.') { newDots = '..' }
+                if (dots == '..') { newDots = '...' }
+                if (dots == '...') { newDots = '&nbsp;' }
+                $('.dots').html(newDots)
+            }, 1000)
+    
+            const handlers = {
+                startInitFunctionOrder(data) {
+                    count = data.count;
+                },
+    
+                initFunctionInvoking(data) {
+                    let percent = (data.idx / count) * 100
+    
+                    document.querySelector('.thingy').style.left = '0%';
+                    document.querySelector('.thingy').style.width = percent + '%';
+    
+                    $('.percent').html(parseInt(percent) + '%')
+                },
+    
+                startDataFileEntries(data) {
+                    count = data.count;
+                },
+    
+                performMapLoadFunction(data) {
+                    ++thisCount;
+    
+                    let percent = (thisCount / count) * 100
+    
+                    document.querySelector('.thingy').style.left = '0%';
+                    document.querySelector('.thingy').style.width = percent + '%';
+    
+                    // dots
+                    $('.percent').html(parseInt(percent) + '%')
+                },
+            };
+    
+            window.addEventListener('message', function (e) {
+                (handlers[e.data.eventName] || function () {})(e.data);
+            });
+        </script>
+
+        <script async src="https://www.youtube.com/iframe_api"></script>
+        <script async src="video.js"></script>
+        <script src="index.js" type="text/javascript"></script>
+    </body>
+</html>

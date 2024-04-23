@@ -1,0 +1,526 @@
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>#creative - barbershop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="custom.css" />
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body style="display: none;">
+<!-- <body> -->
+  <img id="cursorPointer" src="images/cursor.png">
+  <div id="barbershop-limiter" class="openBarbershop">
+    <section class="barbershop-container">
+      <div class="menu-area">
+        <div class="menu-item active" data-ref="genetic">
+          <img src="icons/genetic.svg">
+        </div>
+        <div class="menu-item" data-ref="appearence">
+          <img src="icons/appearence.svg">
+        </div>
+      </div>
+      <header><img src="icons/moustache.svg"><h1>BARBEARIA</h1></header>
+
+      <div class="content-area">
+        <div class="option-separator genetic active">
+          <div class="option-group">
+            <div class="option-input">
+              <label for="fathers">
+                <p>Pai</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="fathers" name="fathers" class="styled-slider slider-progress" min="0" max="44" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="mothers">
+                <p>Mae</p>
+                <p></p>  
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="mothers" name="mothers" class="styled-slider slider-progress" min="21" max="45" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="kinship">
+                <p>Parentesco</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="kinship" name="kinship" class="styled-slider slider-progress" min="0" max="100" value="10"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="skincolor">
+                <p>Cor da Pele</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="skincolor" name="skincolor" class="styled-slider slider-progress" min="0" max="100" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="eyecolor">
+                <p>Cor dos Olhos</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="eyecolor" name="eyecolor" class="styled-slider slider-progress" min="0" max="31" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="option-group">
+            <div class="option-input">
+              <label for="acne">
+                <p>Acne</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="acne" name="acne" class="styled-slider slider-progress" min="0" max="23" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="stains">
+                <p>Manchas</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="stains" name="stains" class="styled-slider slider-progress" min="0" max="12" value="12"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="freckles">
+                <p>Sardas</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="freckles" name="freckles" class="styled-slider slider-progress" min="0" max="17" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="aging">
+                <p>Envelhecimento</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="aging" name="aging" class="styled-slider slider-progress" min="0" max="15" value="15"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="option-group">
+            <div class="option-input">
+              <label for="face00">
+                <p>Largura do Nariz</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="face00" name="face00" class="styled-slider slider-progress" min="-10" max="10" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="face01">
+                <p>Altura do Nariz</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="face01" name="face01" class="styled-slider slider-progress" min="-10" max="10" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="face04">
+                <p>Tamanho do Nariz</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="face04" name="face04" class="styled-slider slider-progress" min="-10" max="10" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="option-group">
+            <div class="option-input">
+              <label for="face06">
+                <p>Altura da Testa</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="face06" name="face06" class="styled-slider slider-progress" min="-10" max="10" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="face08">
+                <p>Altura da Olheira</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="face08" name="face08" class="styled-slider slider-progress" min="-10" max="10" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="face09">
+                <p>Tamanho da Olheira</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="face09" name="face09" class="styled-slider slider-progress" min="-10" max="10" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="option-group">
+            <div class="option-input">
+              <label for="face10">
+                <p>Largura da Bochecha</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="face10" name="face10" class="styled-slider slider-progress" min="0" max="20" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="face13">
+                <p>Tamanho da Bochecha</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="face13" name="face13" class="styled-slider slider-progress" min="-20" max="20" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="face12">
+                <p>Grossura da Boca</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="face12" name="face12" class="styled-slider slider-progress" min="-20" max="20" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="option-group">
+            <div class="option-input">
+              <label for="face15">
+                <p>Tamanho do Queixo</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="face15" name="face15" class="styled-slider slider-progress" min="-20" max="20" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="face16">
+                <p>Grossura do Queixo</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="face16" name="face16" class="styled-slider slider-progress" min="0" max="20" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="face17">
+                <p>Alinhamento do Queixo</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="face17" name="face17" class="styled-slider slider-progress" min="-20" max="20" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="option-group">
+            <div class="option-input">
+              <label for="face14">
+                <p>Grossura do Pescoço</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="face14" name="face14" class="styled-slider slider-progress" min="-20" max="20" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="face19">
+                <p>Tamanho do Pescoço</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="face19" name="face19" class="styled-slider slider-progress" min="0" max="20" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="option-separator appearence">
+          <div class="option-group">
+            <div class="option-input">
+              <label for="hair">
+                <p>Cabelo</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="hair" name="hair" class="styled-slider slider-progress" min="0" max="" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="haircolor">
+                <p>Cor do Cabelo</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="haircolor" name="haircolor" class="styled-slider slider-progress" min="0" max="63" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="haircolor2">
+                <p>Reflexo do Cabelo</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="haircolor2" name="haircolor2" class="styled-slider slider-progress" min="0" max="60" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="option-group">
+            <div class="option-input">
+              <label for="eyebrow">
+                <p>Sobrancelha</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="eyebrow" name="eyebrow" class="styled-slider slider-progress" min="0" max="34" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="eyebrowintensity">
+                <p>Volume da Sobrancelha</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="eyebrowintensity" name="eyebrowintensity" class="styled-slider slider-progress" min="0" max="10" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="eyebrowcolor">
+                <p>Cor da Sobrancelha</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="eyebrowcolor" name="eyebrowcolor" class="styled-slider slider-progress" min="0" max="54" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="option-group">
+            <div class="option-input">
+              <label for="beard">
+                <p>Barba</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="beard" name="beard" class="styled-slider slider-progress" min="0" max="28" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="beardintentisy">
+                <p>Volume da Barba</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="beardintentisy" name="beardintentisy" class="styled-slider slider-progress" min="0" max="10" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="beardcolor">
+                <p>Cor da Barba</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="beardcolor" name="beardcolor" class="styled-slider slider-progress" min="0" max="54" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="option-group">
+            <div class="option-input">
+              <label for="blush">
+                <p>Blush</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="blush" name="blush" class="styled-slider slider-progress" min="0" max="32" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="blushintentisy">
+                <p>Intensidade do Blush</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="blushintentisy" name="blushintentisy" class="styled-slider slider-progress" min="0" max="10" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="blushcolor">
+                <p>Cor do Blush</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="blushcolor" name="blushcolor" class="styled-slider slider-progress" min="0" max="63" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="option-group">
+            <div class="option-input">
+              <label for="lipstick">
+                <p>Batom</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="lipstick" name="lipstick" class="styled-slider slider-progress" min="0" max="10" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="lipstickintensity">
+                <p>Intensidade do Batom</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="lipstickintensity" name="lipstickintensity" class="styled-slider slider-progress" min="0" max="10" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="lipstickcolor">
+                <p>Cor do Batom</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="lipstickcolor" name="lipstickcolor" class="styled-slider slider-progress" min="0" max="63" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+          </div>
+          <div class="option-group">
+            <div class="option-input">
+              <label for="makeup">
+                <p>Maquiagem</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="makeup" name="makeup" class="styled-slider slider-progress" min="0" max="72" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="makeupintensity">
+                <p>Intensidade da Maquiagem</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="makeupintensity" name="makeupintensity" class="styled-slider slider-progress" min="0" max="10" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+            <div class="option-input">
+              <label for="makeupcolor">
+                <p>Cor da Maquiagem</p>
+                <p></p>
+              </label>
+              <div class="input-field">
+                <i class="fas fa-angle-left"></i>
+                <input type="range" oninput="change(this)" id="makeupcolor" name="makeupcolor" class="styled-slider slider-progress" min="0" max="62" value="0"/>
+                <i class="fas fa-angle-right"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btns submit-area">
+        <button disabled>resetar</button>
+        <button class="submit-button">salvar</button>
+      </div>
+      <div class="roll">
+        <span><i class="fa-solid fa-computer-mouse-scrollwheel"></i>Arraste para ver mais opcoes</span>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+  <script src="util.js"></script>
+</body>
+
+</html>

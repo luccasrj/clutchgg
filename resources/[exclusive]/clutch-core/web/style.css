@@ -1,0 +1,196 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: transparent;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    user-select: none;
+    box-sizing: border-box;
+    font-family: "Jura";
+}
+
+:root {
+    --primary: #26fc0a;
+}
+
+main {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 30px;
+    padding: 20px;
+    display: flex;
+    z-index: 9999;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main .item {
+    position: relative;
+    width: 400px;
+    height: 200px;
+    display: flex;
+    padding: 2px;
+    margin-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+main .item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(261.95deg, rgba(0, 0, 0, 0.55) 0.02%, rgba(0, 0, 0, 0) 99.48%);
+}
+
+main .item:last-child {
+    margin: 0;
+}
+
+main .item aside {
+    position: relative;
+    width: 100px;
+    height: 100%;
+    padding: 5px 7px;
+    background-color: var(--primary);
+}
+
+main .item aside span {
+    font-weight: 900;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    opacity: 0.5;
+}
+
+main .item aside::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: .2;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: 30%;
+    background-image: url(https://cdn.discordapp.com/attachments/646512396285902851/904152357393268757/bg.png);
+}
+
+main .item section {
+    width: 75%;
+    display: flex;
+    padding-top: 20px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main .item section img {
+    margin: 10px auto;
+    max-width: 100%;
+    filter: invert(100%);
+}
+
+main .item footer {
+    width: 100%;
+    height: 60px;
+    z-index: 101;
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+main .item footer .info {
+    color: #fff;
+    display: flex;
+    font-size: 7px;
+    letter-spacing: 1px;
+    flex-direction: column;
+    text-transform: uppercase;
+}
+
+main .item footer .info small {
+    opacity: .5;
+    font-size: 7px;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+main .item footer button {
+    border: 0;
+    width: 150px;
+    padding: 6px;
+    outline: none;
+    color: #fff;
+    font-size: 12px;
+    margin-left: 20px;
+    font-weight: bold;
+    border-radius: 30px;
+    letter-spacing: 2px;
+    transition: all .2s;
+    text-transform: uppercase;
+    background-color: var(--primary);
+}
+
+main .item footer button:hover {
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.859) inset;
+}
+
+main .item footer button:active {
+    transform: scale(1.1);
+}
+
+#deathDiv {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	color: #fff;
+	text-transform: uppercase;
+}
+
+#deathDiv #deathText {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: flex;
+	text-align: center;
+	align-items: center;
+	flex-direction: column;
+	transform: translate(-50%,-50%);
+    font-family: "Jura";
+}
+
+#deathDiv small {
+    font-family: "Jura";
+	font-size: 11px;
+	margin-top: 5px;
+	font-weight: 300;
+	letter-spacing: 1px;
+}
+
+#deathText color {
+    font-family: "Jura";
+	font-weight: 600;
+	color: #f56c42;
+}
+
+#deathText color b {
+    font-family: "Jura";
+	font-size: 80px;
+	font-weight: 600;
+	color: #fff;
+}

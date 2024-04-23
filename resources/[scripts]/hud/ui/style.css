@@ -1,0 +1,156 @@
+@font-face {
+  font-family: TTLakes-Regular;
+  src: url("./fonts/TTLakes-Regular.ttf");
+}
+
+@font-face {
+  font-family: TTLakes-Medium;
+  src: url("./fonts/TTLakes-Medium.ttf");
+}
+
+@font-face {
+  font-family: TTLakes-Bold;
+  src: url("./fonts/TTLakes-Bold.ttf");
+}
+
+@font-face {
+  font-family: "TT Lakes";
+  src: url("./fonts/ttlakes.eot");
+  /* IE9*/
+  src: url("./fonts/ttlakes.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+  url("./fonts/ttlakes.woff2") format("woff2"), /* chrome、firefox */
+  url("./fonts/ttlakes.woff") format("woff"), /* chrome、firefox */
+  url("./fonts/ttlakes.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url("./fonts/ttlakes.svg") format("svg");
+  /* iOS 4.1- */
+}
+
+body {
+	display: block;
+	width: 100vw;
+	height: 100vh;
+	background-size: auto;
+  font-family: "Jura";
+  overflow: hidden !important;
+	user-select: none;
+}
+
+.server {
+  display: flex;
+  align-items: center;
+  margin-top: -45px;
+  justify-content: center;
+}
+.server img {
+    width: 185px;
+}
+
+
+.items {
+	padding: 40px 15px 0px 15px; 
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.heartDiv {
+  margin-left: 43px;
+  margin-top: 45px;
+  background-size: contain;
+  background-position: left;
+  width: 100%;
+}
+
+.armorDiv {
+  margin-left: 58px;
+  margin-top: 5px;
+  background-position: left;
+  background-size: contain;
+  width: 100%
+}
+
+.bar {
+  height: 16px;
+  width: 118px;
+  border-radius: 6px;
+  top: 10px;
+  left: 55px;
+}
+
+.life {
+    background: rgba(0, 0, 0, 0);
+}
+
+.life span {
+    background: rgba(0, 0, 0, 0);
+    height: 60%;
+	  margin-left: -48px;
+	  margin-top: -2px;
+    border-radius: 6px;
+    display: block;
+    background-image: linear-gradient(to right, #1f3f5e, #1f3f5e);
+}
+.armor {
+  background: rgba(0, 0, 0, 0);
+}
+
+.armor span {
+  height: 60%;
+  border-radius: 6px;
+  margin-left: -48px;
+  margin-top: 10px;
+  display: block;
+  background-image: linear-gradient(to right, #ffff, #ffff);
+}
+
+#Body, .Reposed, .Wanted, .Progress {
+	display: none;
+}
+
+#NaviWeapons {
+	top: 125px;
+	right: 20px;
+	color: #ffff;
+	display: none;
+	text-align: right;
+	position: absolute;
+  font-family: "Jura";
+	text-transform: uppercase;
+}
+
+.NameWeapon {
+  color: #ffff;
+	font-size: 14px;
+  font-weight: bold;
+}
+
+.NameAmmos {
+	font-size: 20px;
+  font-weight: bold;
+}
+
+.hud-player {
+	position: absolute;
+	display: block;
+	bottom: 1%;
+	right: 15px;
+	background-repeat: none;
+	width: 203px;
+	height: 182px;
+}
+
+.items img {
+  position: relative;
+  top: 53.1px;
+  left: 163px;
+  max-width: 11px;
+  max-height: 11px;
+}
+
+.itemsarmour img {
+  position: relative;
+  top: 21.1px;
+  left: 179px;
+  max-width: 11px;
+  max-height: 11px;
+}
