@@ -504,6 +504,3 @@ function FinishMatch(gameKey)
     gamesActives[gameKey] = {} 
     keysAlreadySelected[gameKey] = nil
 end
-
------
-
